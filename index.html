@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Website Tab Icon -->
+
+<link rel="icon" type="image/png" href="AX/tab.png">
+<link rel="shortcut icon" type="image/png" href="AX/tab.png">
+<meta name="theme-color" content="#0b0d10">
+
+<title>SCAMMER</title>
+<meta name="description" content="XALIF — Fullstack developer, UI/UX designer and security & web researcher. Building next-generation digital experiences where smart code meets strong security." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Tailwind (utility classes) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0b0d10',
+          paper: '#f5f6f8',
+          accent: '#3b63ff',
+          accent2: '#ff3b6b',
+        },
+        fontFamily: {
+          stamp: ['Anton','sans-serif'],
+          ui: ['"Space Grotesk"','sans-serif'],
+          body: ['Newsreader','serif'],
+          mono: ['"JetBrains Mono"','monospace'],
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Applies to ALL img/svg, including ones added later by JS (gallery) */
+  img, svg {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    pointer-events: auto; /* keep clickable, but blocks native save menus that need callout */
+  }
+img,
+svg {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  pointer-events: none;
+}  
+</style>
+</head>
+<body class="bg-paper text-ink font-ui antialiased">
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ GRID BACKDROP ============ -->
+<div class="grid-backdrop" aria-hidden="true"></div>
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+<div class="blob blob-a" aria-hidden="true"></div>
+<div class="blob blob-b" aria-hidden="true"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-50">
+  <div class="border-b-2 border-ink bg-paper/90 backdrop-blur">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="logo-mark">X</div>
+        <span class="font-stamp text-xl tracking-wide">XALIF</span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 font-ui text-sm font-medium uppercase tracking-wide">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#map" class="nav-link">Research</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex hard-btn hard-btn-fill !py-2 !px-4 !text-xs">
+          <i class="fa-solid fa-bolt"></i> Hire Me
+        </a>
+        <button id="menu-toggle" class="lg:hidden hard-btn !p-2" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-b-2 border-ink bg-paper">
+    <div class="flex flex-col px-5 py-4 gap-4 font-ui text-sm font-semibold uppercase tracking-wide">
+      <a href="#about" class="nav-link-mobile">About</a>
+      <a href="#skills" class="nav-link-mobile">Skills</a>
+      <a href="#projects" class="nav-link-mobile">Projects</a>
+      <a href="#gallery" class="nav-link-mobile">Gallery</a>
+      <a href="#map" class="nav-link-mobile">Research</a>
+      <a href="#contact" class="nav-link-mobile">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="home" class="relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-16 relative">
+
+    <!-- floating badge -->
+    <div class="reveal-up inline-flex items-center gap-2 border-2 border-ink rounded-full pl-2 pr-4 py-1.5 mb-8 bg-paper">
+      <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 pulse-dot"></span>
+      <span class="text-xs uppercase tracking-widest" style="font-family:'Atma', system-ui;">
+  কিউরে মাদারচোদ
+</span>
+    </div>
+
+<p class="reveal-up font-mono text-sm md:text-base text-ink/60 mb-4" style="--d:.05s">
+  <span id="typed-hello"></span><span id="typing-cursor">|</span>
+</p>
+
+    <h1 class="leading-[0.92] mb-8">
+      <div id="tile-name" class="tile-row" aria-label="XALIF"></div>
+    </h1>
+
+    <div class="reveal-up flex flex-wrap items-center gap-x-4 gap-y-2 mb-8" style="--d:.15s">
+      <span class="font-stamp text-3xl sm:text-4xl md:text-5xl text-accent hero-word">Python</span>
+      <span class="font-stamp text-3xl sm:text-4xl md:text-5xl hero-word">Developer</span>
+      <span class="font-stamp text-3xl sm:text-4xl md:text-5xl hero-word">&amp;</span>
+      <span class="font-stamp text-3xl sm:text-4xl md:text-5xl hero-word">UI/UX</span>
+      <span class="stamp-box font-stamp text-3xl sm:text-4xl md:text-5xl hero-word">Designer</span>
+    </div>
+
+    <p class="reveal-up font-body text-lg md:text-xl text-ink/80 max-w-2xl mb-10 leading-relaxed" style="--d:.2s">
+      Security Researcher & Full-Stack Developer building digital experiences. Where smart code meets strong security.
+    </p>
+
+    <div class="reveal-up flex flex-wrap gap-4 mb-16" style="--d:.25s">
+      <a href="#projects" class="hard-btn hard-btn-fill">
+        View Projects <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="AX/ax.pdf" download class="hard-btn">
+        Download CV <i class="fa-solid fa-arrow-down-to-line"></i>
+      </a>
+    </div>
+
+    <!-- stats -->
+    <div class="reveal-up grid grid-cols-3 border-2 border-ink divide-x-2 divide-ink stat-panel" style="--d:.3s">
+      <div class="py-6 text-center stat-cell">
+        <p class="font-stamp text-3xl md:text-5xl"><span class="counter" data-target="5">0</span>+</p>
+        <p class="font-ui text-xs md:text-sm uppercase tracking-wide text-ink/60 mt-1">Satisfied Clients</p>
+      </div>
+      <div class="py-6 text-center stat-cell">
+        <p class="font-stamp text-3xl md:text-5xl"><span class="counter" data-target="10">0</span>+</p>
+        <p class="font-ui text-xs md:text-sm uppercase tracking-wide text-ink/60 mt-1">Completed Projects</p>
+      </div>
+      <div class="py-6 text-center stat-cell">
+        <p class="font-stamp text-3xl md:text-5xl"><span class="counter" data-target="20">0</span>+</p>
+        <p class="font-ui text-xs md:text-sm uppercase tracking-wide text-ink/60 mt-1">Technologies</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- profile + connect -->
+<div class="max-w-7xl mx-auto px-5 md:px-8 pb-14 grid md:grid-cols-[280px_1fr] gap-8 items-center">
+
+  <div class="profile-frame mx-auto md:mx-0 float-y">
+
+    <div class="profile-photo">
+      <img 
+        src="AX/xalif.png" 
+        alt="Xalif"
+        class="w-full h-full object-cover"
+      >
+    </div>
+
+    <!-- Online dot -->
+    <span class="status-dot"></span>
+
+  </div>
+
+  <div>
+    <p class="font-mono text-xs uppercase tracking-widest text-accent mb-2">
+      // Let's Connect
+    </p>
+
+    <h3 class="font-stamp text-2xl md:text-3xl mb-5">
+      Find me across the web
+    </h3>
+
+    <div class="flex flex-wrap gap-3">
+      <a href="https://github.com/xylon-404" class="social-pill">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/xylon404" class="social-pill">
+        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+      </a>
+
+      <a href="https://x.com/xylon_404" class="social-pill">
+        <i class="fa-brands fa-x-twitter"></i> Twitter / X
+      </a>
+    </div>
+  </div>
+
+</div>
+
+  <!-- marquee strip -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>SECURITY &amp; WEB RESEARCHER</span><span class="dot-sep">●</span>
+      <span>PYTHON DEVELOPER</span><span class="dot-sep">●</span>
+      <span>UI/UX DESIGNER</span><span class="dot-sep">●</span>
+      <span>SECURITY &amp; WEB RESEARCHER</span><span class="dot-sep">●</span>
+      <span>FULLSTACK DEVELOPER</span><span class="dot-sep">●</span>
+      <span>UI/UX DESIGNER</span><span class="dot-sep">●</span>
+      <span>SECURITY &amp; WEB RESEARCHER</span><span class="dot-sep">●</span>
+      <span>FULLSTACK DEVELOPER</span><span class="dot-sep">●</span>
+      <span>UI/UX DESIGNER</span><span class="dot-sep">●</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ME .exe ============ -->
+<section id="about" class="section-block">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="flex gap-1.5">
+          <span class="dot bg-[#ff5f56]"></span><span class="dot bg-[#ffbd2e]"></span><span class="dot bg-[#27c93f]"></span>
+        </div>
+        <p class="font-mono text-xs md:text-sm">About_Me.exe</p>
+        <div class="w-12"></div>
+      </div>
+
+      <div class="grid md:grid-cols-[220px_1fr]">
+        <!-- sidebar / file tree -->
+        <div class="border-r-2 border-ink/20 p-4 font-mono text-sm">
+          <p class="text-ink/50 mb-3">Path:</p>
+          <p class="mb-4 text-accent break-all" id="file-path">C:/portfolio/about_me/bio.md</p>
+          <p class="text-ink/50 mb-2">Select File:</p>
+          <div class="flex flex-col gap-1" id="file-tabs">
+            <button class="file-tab active" data-file="bio">bio.md</button>
+            <button class="file-tab" data-file="education">education.md</button>
+            <button class="file-tab" data-file="location">location.md</button>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="p-6 md:p-8 font-mono text-sm md:text-base leading-relaxed min-h-[260px]" id="file-content">
+          <p class="text-ink/40 mb-4"># bio.md</p>
+          <p class="mb-3">Hey, I'm <span class="text-accent">XALIF</span> — a junior web developer and Python developer. I'm also a fullstack developer and UI/UX designer who spends the rest of the time thinking like an attacker.</p>
+    <p class="mb-3">I design interfaces that feel effortless, ship backends that hold up under pressure, and audit both for the cracks a normal review misses.</p>
+    <p>Currently obsessed with performant web apps, offensive security tooling, and making complex systems feel simple.</p>
+      </div>
+      </div>
+    </div>
+
+    <!-- what I can do -->
+    <div class="mt-16">
+      <p class="reveal-up eyebrow">What I Can Do For You</p>
+      <h2 class="reveal-up section-title mb-10">Capabilities &amp; Tools</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="cap-card reveal-up">
+          <div class="cap-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="font-stamp text-xl mb-2">Web Development</h3>
+          <p class="font-body text-ink/70">End-to-end web apps — from pixel-perfect frontends to secure, scalable APIs.</p>
+        </div>
+        <div class="cap-card reveal-up" style="--d:.05s">
+          <div class="cap-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3 class="font-stamp text-xl mb-2">UI/UX Design</h3>
+          <p class="font-body text-ink/70">Interfaces designed around real user flows, not just visual trends.</p>
+        </div>
+        <div class="cap-card reveal-up" style="--d:.1s">
+          <div class="cap-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="font-stamp text-xl mb-2">Security Audits</h3>
+          <p class="font-body text-ink/70">Vulnerability research, pentesting and hardening for web applications.</p>
+        </div>
+        <div class="cap-card reveal-up" style="--d:.15s">
+          <div class="cap-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 class="font-stamp text-xl mb-2">API Architecture</h3>
+          <p class="font-body text-ink/70">Clean, documented, versioned APIs built to scale with your product.</p>
+        </div>
+        <div class="cap-card reveal-up" style="--d:.2s">
+          <div class="cap-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3 class="font-stamp text-xl mb-2">Performance</h3>
+          <p class="font-body text-ink/70">Auditing and optimizing for speed — Core Web Vitals, bundle size, caching.</p>
+        </div>
+        <div class="cap-card reveal-up" style="--d:.25s">
+          <div class="cap-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 class="font-stamp text-xl mb-2">Automation</h3>
+          <p class="font-body text-ink/70">Scripts and tooling that remove the repetitive parts of your workflow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section-block bg-ink text-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow !text-accent">My Expertise &amp; Toolkit</p>
+    <h2 class="reveal-up section-title !text-paper mb-10">My Skills</h2>
+
+    <div class="grid md:grid-cols-2 gap-x-16 gap-6" id="skills-list">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUAGES & TOOLS ============ -->
+<section class="section-block">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow">Languages &amp; Tools</p>
+    <h2 class="reveal-up section-title mb-10">What I Work With</h2>
+    <div class="tool-grid" id="tool-grid"></div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="section-block">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow">Behind The Scenes</p>
+    <h2 class="reveal-up section-title mb-10">My Gallery</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section-block bg-ink text-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow !text-accent">Selected Work</p>
+    <h2 class="reveal-up section-title !text-paper mb-8">My Projects</h2>
+
+    <div class="flex flex-wrap gap-3 mb-10 font-mono text-xs md:text-sm uppercase" id="project-filters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="Script">Script</button>
+      <button class="filter-chip" data-filter="security">Security</button>
+      <button class="filter-chip" data-filter="design">Design</button>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid"></div>
+  </div>
+</section>
+
+<!-- ============ CHATBOX AI ============ -->
+<section class="section-block">
+  <div class="max-w-4xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow">Ask Anything</p>
+    <h2 class="reveal-up section-title mb-8">ChatBox AI</h2>
+
+    <div class="chat-window">
+      <div class="chat-titlebar">
+        <span class="dot bg-[#ff5f56]"></span><span class="dot bg-[#ffbd2e]"></span><span class="dot bg-[#27c93f]"></span>
+        <p class="font-mono text-xs md:text-sm ml-2">xalif-assistant</p>
+      </div>
+      <div id="chat-log" class="chat-log"></div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" type="text" autocomplete="off" placeholder="Ask about my stack, projects, or availability…" class="chat-input" />
+        <button type="submit" class="hard-btn hard-btn-fill !py-2 !px-4">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVE MAP ============ -->
+<section id="map" class="section-block">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+    <p class="reveal-up eyebrow">Real-Time</p>
+
+    <h2 class="reveal-up section-title mb-2">
+      Live Visitor Map
+    </h2>
+
+    <div class="reveal-scale globe-panel" id="globe-panel">
+
+      <canvas
+        id="globe"
+        width="600"
+        height="600"
+        style="touch-action:none;cursor:grab;display:block"
+      ></canvas>
+
+      <!-- floating badge that tracks the visitor's marker as the globe spins -->
+      <div id="globe-badge" class="globe-badge" aria-hidden="true">
+        <span class="live-tag"><span class="live-dot-badge"></span>LIVE</span>
+        <span class="badge-sep">|</span>
+        <span id="badge-text">Locating…</span>
+      </div>
+
+      <div class="globe-status">
+        <span class="live-dot"></span>
+
+        <p class="font-mono text-xs text-ink/50">
+          your_ip:
+          <span id="visitor-ip" class="text-accent">—</span>
+          <span class="badge-sep">/</span>
+          location:
+          <span id="visitor-location" class="text-accent">—</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL MEDIA ============ -->
+<section class="section-block bg-ink text-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 text-center">
+    <p class="reveal-up eyebrow !text-accent">Stay In Touch</p>
+    <h2 class="reveal-up section-title !text-paper mb-10">Social Media</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://github.com/xylon-404" class="social-pill-dark"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/xylon404" class="social-pill-dark"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://x.com/xylon_404" class="social-pill-dark"><i class="fa-brands fa-x-twitter"></i> Twitter / X</a>
+      <a href="https://www.instagram.com/xylon404" class="social-pill-dark"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a href="https://t.me/PRO_CODE_X" class="social-pill-dark"><i class="fa-brands fa-telegram"></i> Telegram</a>
+      <a href="https://youtube.com/@xylon404" class="social-pill-dark"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section-block">
+  <div class="max-w-4xl mx-auto px-5 md:px-8">
+    <p class="reveal-up eyebrow">Get In Touch</p>
+    <h2 class="reveal-up section-title mb-10">Contact Me</h2>
+
+    <form id="contact-form" class="grid sm:grid-cols-2 gap-5">
+
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Your Name"
+        class="contact-input"
+      >
+
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Your Email"
+        class="contact-input"
+      >
+
+      <input
+        type="text"
+        name="subject"
+        required
+        placeholder="Subject"
+        class="contact-input sm:col-span-2"
+      >
+
+      <textarea
+        name="message"
+        required
+        placeholder="Your Message"
+        rows="5"
+        class="contact-input sm:col-span-2 resize-none"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="hard-btn hard-btn-fill sm:col-span-2 justify-center"
+      >
+        <span>Send Message</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+
+      <p
+        id="contact-status"
+        class="sm:col-span-2 font-mono text-sm hidden"
+      ></p>
+
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t-2 border-ink bg-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-8">
+    <div class="grid md:grid-cols-[1.4fr_1fr] gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="logo-mark">X</div>
+          <span class="font-stamp text-2xl">XALIF</span>
+        </div>
+        <p class="font-mono text-xs uppercase tracking-widest text-accent mb-3">Security &amp; Web Researcher</p>
+        <p class="font-body text-ink/70 max-w-md">Building next-generation digital experiences with premium design and uncompromising security. Where smart code meets strong security.</p>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-ink/50 mb-4">Quick Links</p>
+        <div class="flex flex-col gap-2 font-ui text-sm">
+          <a href="#about" class="footer-link">› About Me</a>
+          <a href="#skills" class="footer-link">› Skills</a>
+          <a href="#projects" class="footer-link">› Projects</a>
+          <a href="#map" class="footer-link">› Research</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t-2 border-ink/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-xs text-ink/50">
+      <p>© <span id="year"></span> XALIF. All rights reserved.</p>
+      <p>Made with <span class="text-accent">♥</span> by ABDULLHA &amp; <span class="text-ink">&lt;/&gt;</span> XALIF</p>
+    </div>
+  </div>
+</footer>
+
+<button id="to-top" class="to-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script type="module" src="script.js"></script>
+<script type="module">
+import createGlobe from "https://cdn.jsdelivr.net/npm/cobe@2/+esm";
+
+const canvas = document.getElementById("globe");
+const panel  = document.getElementById("globe-panel");
+const badge  = document.getElementById("globe-badge");
+const badgeText = document.getElementById("badge-text");
+const ipLabel = document.getElementById("visitor-ip");
+const locLabel = document.getElementById("visitor-location");
+
+if (!canvas) {
+  console.error("❌ #globe not found");
+} else {
+
+  const THETA = 0.28;   // fixed tilt of the globe (matches state.theta below)
+  let phi = 0;          // current auto-rotation angle
+  let globe = null;
+  let marker = null;    // { lat, lon } in degrees, once we know the visitor
+
+  // =========================
+  // GET VISITOR IP + LOCATION
+  // (auto-detected — no input needed from the visitor)
+  // =========================
+  async function getVisitorLocation() {
+    try {
+      const ipRes = await fetch("https://api.ipify.org/?format=json");
+      const ipData = await ipRes.json();
+      const ip = ipData.ip;
+
+      console.log("Visitor IP:", ip);
+
+      const geoRes = await fetch(
+        `https://ipapi.co/${encodeURIComponent(ip)}/json/`
+      );
+      const geo = await geoRes.json();
+
+      console.log("Visitor:", geo);
+
+      return {
+        ip,
+        lat: Number(geo.latitude),
+        lon: Number(geo.longitude),
+        country: geo.country_name || "Unknown",
+        city: geo.city || ""
+      };
+
+    } catch (err) {
+      console.error("Location error:", err);
+      return null;
+    }
+  }
+
+  // =========================
+  // lat/lon (deg) -> unit sphere vector
+  // (same conversion cobe uses internally, so the projection
+  //  below matches exactly what's drawn on the canvas)
+  // =========================
+  function latLonToVector(lat, lon) {
+    const r = (lat * Math.PI) / 180;
+    const a = (lon * Math.PI) / 180 - Math.PI;
+    const o = Math.cos(r);
+    return [-o * Math.cos(a), Math.sin(r), o * Math.sin(a)];
+  }
+
+  // =========================
+  // Project the marker's 3D position onto the canvas,
+  // given the globe's current rotation (phi/theta),
+  // so the floating badge can follow it as it spins.
+  // =========================
+  function projectMarker(lat, lon, phiNow, thetaNow, size) {
+    const [x, y, z] = latLonToVector(lat, lon);
+
+    // markers sit slightly above the surface (elevation ~0.05)
+    const s = 0.85;
+    const ax = x * s, ay = y * s, az = z * s;
+
+    const e = Math.cos(phiNow), f = Math.sin(phiNow);   // rotation around Y (phi)
+    const c = Math.cos(thetaNow), d = Math.sin(thetaNow); // rotation around X (theta)
+
+    const lx = e * ax + f * az;
+    const ly = f * d * ax + c * ay - e * d * az;
+    const lz = -f * c * ax + d * ay + e * c * az;
+
+    const onFarSide = lz < 0 && Math.hypot(lx, ly) < 0.8;
+
+    return { x: lx, y: ly, visible: !onFarSide };
+  }
+
+  function updateBadgePosition() {
+    if (!marker || !badge) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+
+    const { x, y, visible } = projectMarker(marker.lat, marker.lon, phi, THETA);
+
+    // clip space (-1..1) -> pixel position, relative to the panel
+    const px = (rect.left - panelRect.left) + ((x + 1) / 2) * rect.width;
+    const py = (rect.top - panelRect.top) + ((1 - y) / 2) * rect.height;
+
+    badge.style.left = `${px}px`;
+    badge.style.top = `${py}px`;
+    badge.classList.toggle("visible", visible);
+  }
+
+  // =========================
+  // START GLOBE
+  // =========================
+  async function startGlobe() {
+
+    const visitor = await getVisitorLocation();
+
+    const markers = [];
+
+    if (visitor && Number.isFinite(visitor.lat) && Number.isFinite(visitor.lon)) {
+      marker = { lat: visitor.lat, lon: visitor.lon };
+
+      markers.push({
+        location: [visitor.lat, visitor.lon],
+        size: 0.045
+      });
+
+      console.log(`📍 Marked ${visitor.city}, ${visitor.country}`);
+    }
+
+    const width = canvas.parentElement?.clientWidth || 500;
+
+    globe = createGlobe(canvas, {
+
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+
+      width: width * 2,
+      height: width * 2,
+
+      // =====================
+      // ROTATION
+      // =====================
+      phi: 0,
+      theta: THETA,
+
+      // =====================
+      // LIGHT STYLE (matches the reference: white globe, dark dots)
+      // =====================
+      dark: 0,
+      diffuse: 1.2,
+
+      // =====================
+      // DOT MAP
+      // =====================
+      mapSamples: 16000,
+      mapBrightness: 6,
+      mapBaseBrightness: 0.05,
+
+      // White/light globe
+      baseColor: [1, 1, 1],
+
+      // Red "live" marker, matching the LIVE badge
+      markerColor: [1, 0.24, 0.24],
+
+      glowColor: [1, 1, 1],
+
+      markers: markers,
+
+      arcs: []
+    });
+
+    // =====================
+    // MOUSE + TOUCH DRAG ROTATION
+    // =====================
+    // Drag the globe with a mouse, finger, or stylus.
+    // Auto-rotation pauses while dragging and resumes after release.
+    let isDragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let dragPhi = phi;
+    let dragTheta = THETA;
+
+    const minTheta = -0.9;
+    const maxTheta = 0.9;
+
+    function applyGlobeRotation() {
+      globe.update({
+        phi: dragPhi,
+        theta: dragTheta,
+        width: width * 2,
+        height: width * 2
+      });
+      updateBadgePosition();
+    }
+
+    function startDrag(e) {
+      isDragging = true;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      dragPhi = phi;
+      dragTheta = THETA;
+      canvas.style.cursor = "grabbing";
+      try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+      e.preventDefault();
+    }
+
+    function moveDrag(e) {
+      if (!isDragging) return;
+
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      lastX = e.clientX;
+      lastY = e.clientY;
+
+      // Horizontal drag = longitude rotation.
+      // Vertical drag = latitude tilt.
+      dragPhi += dx * 0.008;
+      dragTheta = Math.max(
+        minTheta,
+        Math.min(maxTheta, dragTheta + dy * 0.006)
+      );
+
+      phi = dragPhi;
+      applyGlobeRotation();
+      e.preventDefault();
+    }
+
+    function endDrag(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      canvas.style.cursor = "grab";
+      try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+
+    canvas.addEventListener("pointerdown", startDrag, { passive: false });
+    canvas.addEventListener("pointermove", moveDrag, { passive: false });
+    canvas.addEventListener("pointerup", endDrag);
+    canvas.addEventListener("pointercancel", endDrag);
+    canvas.addEventListener("pointerleave", (e) => {
+      if (e.pointerType === "mouse" && isDragging) endDrag(e);
+    });
+
+    // =====================
+    // CONTINUOUS ROTATION
+    // =====================
+    function frame() {
+      if (!isDragging) {
+        phi += 0.004;
+        dragPhi = phi;
+        dragTheta = THETA;
+      }
+
+      globe.update({
+        phi: isDragging ? dragPhi : phi,
+        theta: isDragging ? dragTheta : THETA,
+        width: width * 2,
+        height: width * 2
+      });
+
+      // keep the floating badge glued to the marker every frame
+      updateBadgePosition();
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    // =====================
+    // TEXT LABELS
+    // =====================
+    if (visitor) {
+      if (ipLabel) ipLabel.textContent = visitor.ip || "—";
+
+      const place = [visitor.city, visitor.country].filter(Boolean).join(", ");
+      if (locLabel) locLabel.textContent = place || visitor.country || "—";
+      if (badgeText) badgeText.textContent = place || visitor.country || "You";
+    } else {
+      if (ipLabel) ipLabel.textContent = "unavailable";
+      if (locLabel) locLabel.textContent = "unavailable";
+      if (badge) badge.classList.remove("visible");
+    }
+  }
+
+  // Wait for layout
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      startGlobe();
+    });
+  });
+
+}
+
+document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", playClick);
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", playClick);
+});
+
+        (function () {
+    function detectDevTool() {
+        if (
+            window.outerWidth - window.innerWidth > 200 ||
+            window.outerHeight - window.innerHeight > 200
+        ) {
+            window.location.href = "about:blank";
+        }
+    }
+
+    setInterval(detectDevTool, 500);
+})();
+
+setInterval(function () {
+    debugger;
+}, 100);
+
+/* Console warning for casual snoopers */
+(function () {
+  const warn = () => {
+    console.log(
+      "%cSTOP!",
+      "color:#ff3b6b;font-size:48px;font-weight:bold;"
+    );
+    console.log(
+      "%cThis is a browser feature for developers. Content on this site is not to be copied or redistributed without permission.",
+      "font-size:14px;"
+    );
+  };
+  warn();
+  setInterval(warn, 5000);
+})();
+
+/* Disable right-click */
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+/* Disable image dragging */
+document.addEventListener("dragstart", function (e) {
+  if (e.target.tagName === "IMG" || e.target.tagName === "SVG") {
+    e.preventDefault();
+  }
+});
+
+/* Disable image selection */
+document.addEventListener("selectstart", function (e) {
+  if (
+    e.target.tagName === "IMG" ||
+    e.target.tagName === "SVG"
+  ) {
+    e.preventDefault();
+  }
+});
+
+/* Disable common code/image saving shortcuts and dev tool hotkeys */
+document.addEventListener("keydown", function (e) {
+  const key = e.key.toLowerCase();
+
+  // Ctrl/Cmd + S (save page)
+  if ((e.ctrlKey || e.metaKey) && key === "s") e.preventDefault();
+
+  // Ctrl/Cmd + U (view source)
+  if ((e.ctrlKey || e.metaKey) && key === "u") e.preventDefault();
+
+  // Ctrl/Cmd + Shift + I / J / C (devtools / console / inspector)
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && ["i", "j", "c"].includes(key)) {
+    e.preventDefault();
+  }
+
+  // F12
+  if (key === "f12") e.preventDefault();
+
+  // Ctrl/Cmd + P (print, sometimes used to export page)
+  if ((e.ctrlKey || e.metaKey) && key === "p") e.preventDefault();
+});
+
+/* Block long-press "save image" on mobile (Android/iOS) */
+(function () {
+  let pressTimer;
+  document.addEventListener("touchstart", function (e) {
+    if (e.target.tagName === "IMG" || e.target.tagName === "SVG") {
+      pressTimer = setTimeout(() => {
+        // long-press detected on an image; briefly hide it so the
+        // native "save image" sheet has nothing to grab
+        e.target.style.visibility = "hidden";
+        setTimeout(() => (e.target.style.visibility = "visible"), 300);
+      }, 500);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    clearTimeout(pressTimer);
+  });
+
+  document.addEventListener("touchmove", function () {
+    clearTimeout(pressTimer);
+  });
+})();
+
+/* CSS protection for images & SVG */
+document.querySelectorAll("img, svg").forEach(el => {
+  el.style.userSelect = "none";
+  el.style.webkitUserSelect = "none";
+  el.style.webkitTouchCallout = "none";
+  el.style.webkitUserDrag = "none";
+  el.setAttribute("draggable", "false");
+  el.setAttribute("oncontextmenu", "return false;");
+});
+</script>
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.addEventListener("touchstart", e => {
+  if (e.target.closest("img, svg")) {
+    e.preventDefault();
+  }
+}, { passive: false });
+</script>
+</body>
+</html>
